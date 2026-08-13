@@ -19,7 +19,7 @@ CHANNEL_ID = os.environ.get('CHANNEL_ID')
 
 TIMEFRAME_ENTRY = '15m'
 TIMEFRAME_TREND = '1h'
-TOP_N_COINS = 20
+TOP_N_COINS = 50
 LEVERAGE = 15
 
 # Risk & Targets
