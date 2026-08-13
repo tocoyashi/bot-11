@@ -203,7 +203,7 @@ def analyze_symbol(symbol):
             return None
 
         # === Strategy: Smart Trend Pullback ===
-        confidence = 50
+        confidence = 60
         direction = None
 
         # LONG
