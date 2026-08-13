@@ -203,7 +203,7 @@ def analyze_symbol(symbol):
             return None
 
         # === Strategy: Smart Trend Pullback ===
-        confidence = 60
+        confidence = 50
         direction = None
 
         # LONG
@@ -241,7 +241,7 @@ def analyze_symbol(symbol):
             return None
 
         confidence = min(95, confidence)
-        if confidence < 55:
+        if confidence < 60:
             print(f"  {symbol}: Confidence too low ({confidence}%)")
             return None
 
@@ -288,11 +288,14 @@ def analyze_symbol(symbol):
 def build_message(signal):
     pair = signal['symbol'].replace('/', '')
     direction = signal['direction']
-    emoji = "🚀" if direction == "LONG" else "🔻"
+    accuracy = round(signal['confidence'] / 10)
 
-    msg = f"""{emoji} {direction}
+    msg = f"""New Signal : Accuracy {accuracy}/10
 
-#{pair}
+Direction: {direction}
+Leverage : {LEVERAGE}x
+
+Pairs: #{pair}
 
 Entry :
 
@@ -307,9 +310,7 @@ Targets :
 4) {_fmt(signal['tp4'])}
 5) {_fmt(signal['tp5'])}
 
- Stop : {_fmt(signal['sl'])}
-
-Leverage : {LEVERAGE}x
+📍Stop : {_fmt(signal['sl'])}
 
 L E A K E D  B Y: @BULLS_SIGNALS"""
 
