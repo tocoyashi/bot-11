@@ -19,7 +19,7 @@ CHANNEL_ID = os.environ.get('CHANNEL_ID')
 
 TIMEFRAME_ENTRY = '15m'
 TIMEFRAME_TREND = '1h'
-TOP_N_COINS = 30
+TOP_N_COINS = 35
 LEVERAGE = 15
 
 # Targets (5 levels)
@@ -40,7 +40,7 @@ COOLDOWN_HOURS = 1
 COOLDOWN_FILE = Path('cooldown.json')
 
 STABLECOINS = ['USDC/USDT', 'TUSD/USDT', 'DAI/USDT', 'FDUSD/USDT', 'USDP/USDT', 'PYUSD/USDT']
-BLACKLIST = ['WXT/USDT', 'ANTFUN/USDT', 'UPC/USDT', 'RAIN/USDT', 'USD1/USDT', 'USDE/USDT', 'BEAT/USDT', 'AKE/USDT', 'MY/USDT', 'MBG/USDT', 'AIX/USDT', 'XPLK/USDT', 'ZAY/USDT', 'GOLD/USDT']
+BLACKLIST = ['WXT/USDT', 'ANTFUN/USDT', 'UPC/USDT', 'RAIN/USDT', 'USD1/USDT', 'USDE/USDT', 'BEAT/USDT', 'AKE/USDT', 'MY/USDT', 'MBG/USDT', 'AIX/USDT', 'XPLK/USDT', 'ZAY/USDT', '9BIT/USDT', 'CYS/USDT', 'GOLD/USDT']
 
 
 def _fmt(price):
@@ -203,7 +203,7 @@ def analyze_symbol(symbol):
             return None
 
         # === Strategy: Smart Trend Pullback ===
-        confidence = 50
+        confidence = 65
         direction = None
 
         # LONG
