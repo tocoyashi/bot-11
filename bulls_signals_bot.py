@@ -19,7 +19,7 @@ CHANNEL_ID = os.environ.get('CHANNEL_ID')
 
 TIMEFRAME_ENTRY = '15m'
 TIMEFRAME_TREND = '1h'
-TOP_N_COINS = 35
+TOP_N_COINS = 20
 LEVERAGE = 15
 
 # Targets (5 levels)
